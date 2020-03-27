@@ -240,7 +240,7 @@
         <div class="logo-name">wyb</div>
         <div class="logo-desc">
             
-                Never really desperate, only the lost of the soul.
+                wyb的个人学习博客
             
         </div>
     </div>
@@ -442,7 +442,8 @@
 
 
     <script>
-        $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/Sitoi/cdn/medias/banner/0.jpg)');
+        // 每天切换 banner 图.  Switch banner image every day.
+        $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/Sitoi/cdn/medias/banner/' + new Date().getDay() + '.jpg)');
     </script>
 
     </div>
@@ -457,21 +458,21 @@
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
     <div class="statis">
-        <span class="count"><a href="/">2</a></span>
+        <span class="count"><a href="/">4</a></span>
         <span class="name">文章</span>
     </div>
 
 
 
     <div class="statis">
-        <span class="count"><a href="/categories">1</a></span>
+        <span class="count"><a href="/categories">3</a></span>
         <span class="name">分类</span>
     </div>
 
 
 
     <div class="statis">
-        <span class="count"><a href="/tags">3</a></span>
+        <span class="count"><a href="/tags">8</a></span>
         <span class="name">标签</span>
     </div>
 
@@ -487,21 +488,21 @@
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
     <div class="statis">
-        <span class="count"><a href="/">2</a></span>
+        <span class="count"><a href="/">4</a></span>
         <span class="name">文章</span>
     </div>
 
 
 
     <div class="statis">
-        <span class="count"><a href="/categories">1</a></span>
+        <span class="count"><a href="/categories">3</a></span>
         <span class="name">分类</span>
     </div>
 
 
 
     <div class="statis">
-        <span class="count"><a href="/tags">3</a></span>
+        <span class="count"><a href="/tags">8</a></span>
         <span class="name">标签</span>
     </div>
 
@@ -612,7 +613,7 @@
                     </div>
                 </div>
 
-                <div class="introduction center-align" data-aos="fade-up">失败人的自我救赎</div>
+                <div class="introduction center-align" data-aos="fade-up">失败人的自我救赎。 一个非常想学习并且在努力学习的人，希望各位面试官能够给学习的人一个机会。</div>
 <!--                <div class="card-content" style="margin: 1.5rem auto 3rem;max-width: 1000px;">-->
 <!--                    <p>博客模版项目</p>
 <script>
@@ -694,7 +695,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [1,0,0,0,0,0,0,0,0,1,0,0,0],
+                data: [1,0,0,0,0,0,0,0,0,1,0,0,2],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a', '#3ecf8e', '#82d3f4'],
@@ -736,7 +737,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"Hexo","value":2}],
+                data: [{"name":"Hexo","value":2},{"name":"二叉树","value":1},{"name":"贪心算法","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -760,7 +761,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["教程","Hexo","GitHub"]
+                data: ["教程","Hexo","GitHub","c++","二叉树","递归","贪心算法","python"]
             }
         ],
         yAxis: [
@@ -773,7 +774,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth: 18,
-                data: [2,2,2],
+                data: [2,2,2,2,1,1,1,1],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -802,6 +803,70 @@
     tagsChart.setOption(tagsOption);
 </script>
 
+                
+                    
+<div class="my-projects">
+    <div class="title center-align" data-aos="zoom-in-up">
+        <i class="fa fa-gift"></i>&nbsp;&nbsp;我的项目
+    </div>
+    <div class="row">
+        
+            
+                <div class="col s12 m6 l4" data-aos="fade-up">
+                    <div class="info center-align">
+                        <a href="" class="icon"
+                           style="background: linear-gradient(to bottom right, #66BB6A 0%, #81C784 100%)" target="_blank">
+                            <i class="fa fa-cubes"></i>
+                        </a>
+                        <div class="info-title">
+                            <a href="" target="_blank">偏最小二乘法的运用及改进</a>
+                        </div>
+                        <div class="info-desc"></div>
+                    </div>
+                </div>
+            
+                <div class="col s12 m6 l4" data-aos="fade-up">
+                    <div class="info center-align">
+                        <a href="" class="icon"
+                           style="background: linear-gradient(to bottom right, #66BB6A 0%, #81C784 100%)" target="_blank">
+                            <i class="fa fa-github"></i>
+                        </a>
+                        <div class="info-title">
+                            <a href="" target="_blank">数学建模(CT成像)</a>
+                        </div>
+                        <div class="info-desc"></div>
+                    </div>
+                </div>
+            
+                <div class="col s12 m6 l4" data-aos="fade-up">
+                    <div class="info center-align">
+                        <a href="" class="icon"
+                           style="background: linear-gradient(to bottom right, #29B6F6 0%, #1E88E5 100%)" target="_blank">
+                            <i class="fa fa-plane"></i>
+                        </a>
+                        <div class="info-title">
+                            <a href="" target="_blank">超市销售管理系统(C/S)</a>
+                        </div>
+                        <div class="info-desc"></div>
+                    </div>
+                </div>
+            
+                <div class="col s12 m6 l4" data-aos="fade-up">
+                    <div class="info center-align">
+                        <a href="" class="icon"
+                           style="background: linear-gradient(to bottom right, #29B6F6 0%, #1E88E5 100%)" target="_blank">
+                            <i class="fa fa-plane"></i>
+                        </a>
+                        <div class="info-title">
+                            <a href="" target="_blank">车辆年检管理系统(SSM)</a>
+                        </div>
+                        <div class="info-desc"></div>
+                    </div>
+                </div>
+            
+        
+    </div>
+</div>
                 
 
                 
@@ -846,6 +911,39 @@
                     </div>
                 </div>
             
+                
+                <div class="col s12 m6 l6" data-aos="fade-up">
+                    <div class="skillbar">
+                        <div class="skillbar-title"
+                             style="background: linear-gradient(to right, #FF0066 0%, #FF00CC 100%); width: 60%">
+                            <span>matlab</span>
+                        </div>
+                        <div class="skill-bar-percent">60%</div>
+                    </div>
+                </div>
+            
+                
+                <div class="col s12 m6 l6" data-aos="fade-up">
+                    <div class="skillbar">
+                        <div class="skillbar-title"
+                             style="background: linear-gradient(to right, #FF0066 0%, #FF00CC 100%); width: 50%">
+                            <span>mysql</span>
+                        </div>
+                        <div class="skill-bar-percent">50%</div>
+                    </div>
+                </div>
+            
+                
+                <div class="col s12 m6 l6" data-aos="fade-up">
+                    <div class="skillbar">
+                        <div class="skillbar-title"
+                             style="background: linear-gradient(to right, #FF0066 0%, #FF00CC 100%); width: 60%">
+                            <span>sql server</span>
+                        </div>
+                        <div class="skill-bar-percent">60%</div>
+                    </div>
+                </div>
+            
         
     </div>
 
@@ -874,6 +972,32 @@
                         </a>
                     
                 
+                    
+                        <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                            <span class="chip center-align waves-effect waves-light chip-default">二叉树</span>
+                        </a>
+                    
+                
+                    
+                        <a href="/tags/%E9%80%92%E5%BD%92/">
+                            <span class="chip center-align waves-effect waves-light chip-default">递归</span>
+                        </a>
+                    
+                
+                    
+                        <a href="/tags/c/">
+                            <span class="chip center-align waves-effect waves-light chip-default">c++</span>
+                        </a>
+                    
+                
+                    
+                        <a href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/">
+                            <span class="chip center-align waves-effect waves-light chip-default">贪心算法</span>
+                        </a>
+                    
+                
+                    
+                
             </div>
         </div>
     
@@ -896,7 +1020,19 @@
             <span id="sitetime">载入运行时间...</span>
             
             
+                
             
+            
+                <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="fa fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                                                                       class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fa fa-user"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                                                                         class="white-color"></span>&nbsp;人
+            </span>
             
             <br>
             
@@ -908,8 +1044,12 @@
             
                 
                     &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                            class="white-color">203</span>&nbsp;字
+                            class="white-color">2k</span>&nbsp;字
                 
+                
+                    <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" alt="icp"/>
+                <a href="http://beian.miit.gov.cn/" target="_blank">备案信息沪ICP备12138号</a>
+            </span>
                 
                 <script>
                     function siteTime() {
@@ -957,7 +1097,7 @@
             
 
         </div>
-        <div class="col s12 m4 l4 social-link ">
+        <div class="col s12 m4 l4 social-link social-statis">
     <a href="https://github.com/wyb20200220" class="tooltipped" target="_blank"
        data-tooltip="访问我的GitHub"
        data-position="top" data-delay="50">
@@ -1092,6 +1232,8 @@
 
 
 
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
 
 <script type="text/javascript">
     var OriginTitile = document.title,
@@ -1116,7 +1258,7 @@
 
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1585278188139')
+  navigator.serviceWorker.register('/sw.js?t=1585321176877')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

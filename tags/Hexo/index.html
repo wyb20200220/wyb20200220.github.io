@@ -240,7 +240,7 @@
         <div class="logo-name">wyb</div>
         <div class="logo-desc">
             
-                Never really desperate, only the lost of the soul.
+                wyb的个人学习博客
             
         </div>
     </div>
@@ -435,7 +435,8 @@
 
 
     <script>
-        $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/Sitoi/cdn/medias/banner/0.jpg)');
+        // 每天切换 banner 图.  Switch banner image every day.
+        $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/Sitoi/cdn/medias/banner/' + new Date().getDay() + '.jpg)');
     </script>
 
     </div>
@@ -477,6 +478,51 @@
                              chip-default "
                           data-tagname="GitHub" style="background-color: #D5F5E3;">GitHub
                         <span class="tag-length">2</span>
+                    </span>
+                    </a>
+                
+                    
+                    <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" title="二叉树: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                          data-tagname="二叉树" style="background-color: #E8F8F5;">二叉树
+                        <span class="tag-length">1</span>
+                    </span>
+                    </a>
+                
+                    
+                    <a href="/tags/%E9%80%92%E5%BD%92/" title="递归: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                          data-tagname="递归" style="background-color: #FEF9E7;">递归
+                        <span class="tag-length">1</span>
+                    </span>
+                    </a>
+                
+                    
+                    <a href="/tags/c/" title="c++: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                          data-tagname="c++" style="background-color: #F8F9F9;">c++
+                        <span class="tag-length">2</span>
+                    </span>
+                    </a>
+                
+                    
+                    <a href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" title="贪心算法: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                          data-tagname="贪心算法" style="background-color: #82E0AA;">贪心算法
+                        <span class="tag-length">1</span>
+                    </span>
+                    </a>
+                
+                    
+                    <a href="/tags/python/" title="python: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                          data-tagname="python" style="background-color: #D7BDE2;">python
+                        <span class="tag-length">1</span>
                     </span>
                     </a>
                 
@@ -525,7 +571,7 @@
                 
                 <div class="article tag-post col s12 m6 l4" data-tags="教程, Hexo, GitHub" data-aos="fade-up">
                     <div class="card">
-                        <a href="/posts/6.html">
+                        <a href="/posts/7.html">
                             <div class="card-image tag-image">
                                 
                                     
@@ -571,7 +617,19 @@
             <span id="sitetime">载入运行时间...</span>
             
             
+                
             
+            
+                <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="fa fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                                                                       class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fa fa-user"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                                                                         class="white-color"></span>&nbsp;人
+            </span>
             
             <br>
             
@@ -583,8 +641,12 @@
             
                 
                     &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                            class="white-color">203</span>&nbsp;字
+                            class="white-color">2k</span>&nbsp;字
                 
+                
+                    <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" alt="icp"/>
+                <a href="http://beian.miit.gov.cn/" target="_blank">备案信息沪ICP备12138号</a>
+            </span>
                 
                 <script>
                     function siteTime() {
@@ -632,7 +694,7 @@
             
 
         </div>
-        <div class="col s12 m4 l4 social-link ">
+        <div class="col s12 m4 l4 social-link social-statis">
     <a href="https://github.com/wyb20200220" class="tooltipped" target="_blank"
        data-tooltip="访问我的GitHub"
        data-position="top" data-delay="50">
@@ -767,6 +829,8 @@
 
 
 
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
 
 <script type="text/javascript">
     var OriginTitile = document.title,
@@ -791,7 +855,7 @@
 
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1585278188139')
+  navigator.serviceWorker.register('/sw.js?t=1585321176877')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

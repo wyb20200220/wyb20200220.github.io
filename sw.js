@@ -24,7 +24,11 @@ var precacheUrls = [];
 
   precacheUrls.push('/');
 
-  precacheUrls.push('/posts/6.html');
+  precacheUrls.push('/posts/7.html');
+
+  precacheUrls.push('/posts/9.html');
+
+  precacheUrls.push('/posts/8.html');
 
   precacheUrls.push('/posts/6.html');
 

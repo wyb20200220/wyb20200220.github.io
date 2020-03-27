@@ -240,7 +240,7 @@
         <div class="logo-name">wyb</div>
         <div class="logo-desc">
             
-                Never really desperate, only the lost of the soul.
+                wyb的个人学习博客
             
         </div>
     </div>
@@ -435,7 +435,8 @@
 
 
     <script>
-        $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/Sitoi/cdn/medias/banner/0.jpg)');
+        // 每天切换 banner 图.  Switch banner image every day.
+        $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/Sitoi/cdn/medias/banner/' + new Date().getDay() + '.jpg)');
     </script>
 
     </div>
@@ -803,7 +804,19 @@
             <span id="sitetime">载入运行时间...</span>
             
             
+                
             
+            
+                <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="fa fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                                                                       class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fa fa-user"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                                                                         class="white-color"></span>&nbsp;人
+            </span>
             
             <br>
             
@@ -815,8 +828,12 @@
             
                 
                     &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;<span
-                            class="white-color">203</span>&nbsp;字
+                            class="white-color">2k</span>&nbsp;字
                 
+                
+                    <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" alt="icp"/>
+                <a href="http://beian.miit.gov.cn/" target="_blank">备案信息沪ICP备12138号</a>
+            </span>
                 
                 <script>
                     function siteTime() {
@@ -864,7 +881,7 @@
             
 
         </div>
-        <div class="col s12 m4 l4 social-link ">
+        <div class="col s12 m4 l4 social-link social-statis">
     <a href="https://github.com/wyb20200220" class="tooltipped" target="_blank"
        data-tooltip="访问我的GitHub"
        data-position="top" data-delay="50">
@@ -999,6 +1016,8 @@
 
 
 
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
 
 <script type="text/javascript">
     var OriginTitile = document.title,
@@ -1023,7 +1042,7 @@
 
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1585278188139')
+  navigator.serviceWorker.register('/sw.js?t=1585321176877')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

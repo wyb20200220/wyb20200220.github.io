@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://crawlmkt.github.io/"/>
-  <updated>2019-12-30T11:27:42.000Z</updated>
+  <updated>2020-03-27T14:56:56.855Z</updated>
   <id>https://crawlmkt.github.io/</id>
   
   <author>
@@ -15,6 +15,68 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>二叉树镜像输出，二叉树深度求解，二叉树的最近公共祖先（c++递归求解）</title>
+    <link href="https://crawlmkt.github.io/posts/9.html"/>
+    <id>https://crawlmkt.github.io/posts/9.html</id>
+    <published>2020-03-27T14:09:36.000Z</published>
+    <updated>2020-03-27T14:56:56.855Z</updated>
+    
+    <content type="html"><![CDATA[<p>##一：二叉树镜像<br>请完成一个函数，输入一个二叉树，该函数输出它的镜像。</p><p>例如输入：</p><pre><code> 1</code></pre><p>   /   <br>  2     3<br> / \   / <br>4   5 6  7<br>镜像输出：</p><pre><code> 1</code></pre><p>   /   <br>  3     2<br> / \   / <br>7   6 5   4</p><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof">https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof</a></p><p>###算法思想：</p><p>二叉树的镜像图解：</p><p>输出二叉树的镜像，就是将二叉树的左右子树进行交换，可使用递归，先对根节点下的左右子树进行交换，再对左子树下的进行交换，再对右子树下的进行交换</p><p>###代码实现：</p><p>class Solution {<br>public:<br>    TreeNode* mirrorTree(TreeNode* root) {<br>        if(root==NULL){<br>            return NULL;<br>        }<br>        swap(root-&gt;left,root-&gt;right);//左右子树交换<br>        mirrorTree(root-&gt;left);<br>        mirrorTree(root-&gt;right);<br>        return root;<br>    }<br>};<br>##二：二叉树的深度<br>输入一棵二叉树的根节点，求该树的深度。从根节点到叶节点依次经过的节点（含根、叶节点）形成树的一条路径，最长路径的长度为树的深度。</p><p>例如：</p><p>给定二叉树 [3,9,20,null,null,15,7]，</p><pre><code>3</code></pre><p>   / <br>  9  20<br>    /  <br>   15   7<br>返回它的最大深度 3 。</p><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/er-cha-shu-de-shen-du-lcof">https://leetcode-cn.com/problems/er-cha-shu-de-shen-du-lcof</a></p><p>###算法思想：</p><p>递归思想，如果根节点为空，则深度为0，往后都是以节点不为空为条件，去计算左右子树的的深度，取深度最大值+根节点的深度1即为二叉树的深度。</p><p>###代码实现：</p><p>class Solution {<br>public:<br>    int maxDepth(TreeNode* root) {<br>        if(root==NULL){<br>            return 0;<br>        }<br>        return max(maxDepth(root-&gt;left),maxDepth(root-&gt;right))+1;<br>    }<br>};<br>##三：二叉树的最近公共祖先<br>给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。</p><p>百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”</p><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof">https://leetcode-cn.com/problems/er-cha-shu-de-zui-jin-gong-gong-zu-xian-lcof</a></p><p>###算法思想：</p><p>如果p和q分别是root的左右节点，那么root就是我们要找的最近公共祖先<br>如果p和q都是root的左节点，那么返回lowestCommonAncestor(root-&gt;left,p,q)<br>如果p和q都是root的右节点，那么返回lowestCommonAncestor(root-&gt;right,p,q)</p><p>###代码实现：</p><p>class Solution {<br>public:<br>    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {<br>        if(!root||p==root||q==root){<br>            return root;<br>        }<br>        TreeNode *left1=lowestCommonAncestor(root-&gt;left,p,q);<br>        TreeNode *right1=lowestCommonAncestor(root-&gt;right,p,q);<br>        if(!left1&amp;&amp;!right1){<br>            return NULL;<br>        }<br>        else if(left1&amp;&amp;!right1){<br>            return left1;<br>        }else if(!left1&amp;&amp;right1){<br>            return right1;<br>        }<br>        return root;<br>    }<br>};</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;##一：二叉树镜像&lt;br&gt;请完成一个函数，输入一个二叉树，该函数输出它的镜像。&lt;/p&gt;
+&lt;p&gt;例如输入：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; 1&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   /   &lt;br&gt;  2     3&lt;br&gt; / \   / &lt;br&gt;4   5 6  7&lt;br&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="二叉树" scheme="https://crawlmkt.github.io/categories/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+    
+      <category term="二叉树" scheme="https://crawlmkt.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+      <category term="递归" scheme="https://crawlmkt.github.io/tags/%E9%80%92%E5%BD%92/"/>
+    
+      <category term="c++" scheme="https://crawlmkt.github.io/tags/c/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>剪绳子问题</title>
+    <link href="https://crawlmkt.github.io/posts/8.html"/>
+    <id>https://crawlmkt.github.io/posts/8.html</id>
+    <published>2020-03-27T12:02:34.000Z</published>
+    <updated>2020-03-27T14:54:39.028Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一：-剪绳子（1）"><a href="#一：-剪绳子（1）" class="headerlink" title="一： 剪绳子（1）"></a>一： 剪绳子（1）</h2><p>给你一根长度为 n 的绳子，请把绳子剪成整数长度的 m 段（m、n都是整数，n&gt;1并且m&gt;1），每段绳子的长度记为 k[0],k[1]…k[m] 。请问 k[0]<em>k[1]</em>…*k[m] 可能的最大乘积是多少？例如，当绳子的长度是8时，我们把它剪成长度分别为2、3、3的三段，此时得到的最大乘积是18。</p><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/jian-sheng-zi-lcof">https://leetcode-cn.com/problems/jian-sheng-zi-lcof</a></p><p>这里主要是按贪心法的思想去求解。</p><p>贪心选择是采用从顶向下、以迭代的方法做出相继选择，每做一次贪心选择就将所求问题简化为一个规模更小的子问题。问题的一个整体最优解，是从贪心选择开始的，而且作了贪心选择后，原问题简化为一个规模更小的类似子问题。然后，用数学归纳法证明，通过每一步贪心选择，最终可得到问题的一个整体最优解。</p><h3 id="数学归纳："><a href="#数学归纳：" class="headerlink" title="数学归纳："></a>数学归纳：</h3><p>2=1+1，1*1&lt;1+1，可以看出我们在选择相乘尽可能大时，2是比1更优的选择</p><p>3=1+2，1*2&lt;1+2，可以看出3是比1更优的选择</p><p>4=2+2，2*2=2+2，4和2相同，4可以用2表示</p><p>5=2+3，1+2+2，…，2*3是最优的选择</p><p>…</p><p>再往后的数都可以用1，2，3去表示，而3是里面最优的选择，并且切分段数越多，乘积一般是越大的</p><p>所以我们算法设计为：</p><p>长度为n,n/3，先尽可能的对切分多段长度为3的，</p><p>长度不足3的，若为2，因为2比1更优先选择，所以不拆为1，1，若为1，因为1+3=4，对于4我们是拆分成2+2时，乘积最大。</p><h3 id="c-的解决代码："><a href="#c-的解决代码：" class="headerlink" title="c++的解决代码："></a>c++的解决代码：</h3><p>class Solution {<br>public:<br>    int cuttingRope(int n) {<br>        int a=n/3;<br>        if(n&lt;=3){<br>            return n-1;<br>        }<br>        if(n%3==0){<br>            return pow(3,a);<br>        }else if(n%3==1){<br>            return pow(3,a-1)<em>4;<br>        }else{<br>            return pow(3,a)</em>2;<br>        }<br>    }<br>};</p><h3 id="python3的解决代码："><a href="#python3的解决代码：" class="headerlink" title="python3的解决代码："></a>python3的解决代码：</h3><p>class Solution:<br>    def cuttingRope(self, n: int) -&gt; int:<br>        if n&lt;=3:<br>            return n-1<br>        a=n//3<br>        b=n%3<br>        if b==0:<br>            return pow(3,a)<br>        if b==1:<br>            return pow(3,a-1)<em>4<br>        return pow(3,a)</em>2</p><h2 id="二：-剪绳子（2）"><a href="#二：-剪绳子（2）" class="headerlink" title="二： 剪绳子（2）"></a>二： 剪绳子（2）</h2><p>给你一根长度为 n 的绳子，请把绳子剪成整数长度的 m 段（m、n都是整数，n&gt;1并且m&gt;1），每段绳子的长度记为 k[0],k[1]…k[m] 。请问 k[0]<em>k[1]</em>…*k[m] 可能的最大乘积是多少？例如，当绳子的长度是8时，我们把它剪成长度分别为2、3、3的三段，此时得到的最大乘积是18。</p><p>答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。</p><p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/jian-sheng-zi-ii-lcof">https://leetcode-cn.com/problems/jian-sheng-zi-ii-lcof</a></p><p>如果用c++来写，注意c++的大数溢出问题，是不能直接用乘方去直接取余的，还要注意pow函数的返回是double类型的，与int型进行计算时是需要强制转换成int。</p><p>在这里我们是不直接使用pow函数，自定义一个与pow函数功能相近的newpow函数，在这里面就完成n个3的相乘，并在每一步都取余，避免大数的溢出。（newpow函数要定义为long long），newpow可以写入private，也可以直接写在public。</p><h3 id="c-的解决代码：-1"><a href="#c-的解决代码：-1" class="headerlink" title="c++的解决代码："></a>c++的解决代码：</h3><p>class Solution {<br>public:<br>    long long newpow(int m){<br>        long long result=1;<br>        for(int i=0;i&lt;m;i++){<br>            result=result*3;<br>            result=result%1000000007;<br>        }<br>        return result;<br>    }</p><pre><code>int cuttingRope(int n) {    int a=n/3;    int b=n%3;    if(n&lt;=3){        return (n-1)%1000000007;    }    if(b==0){        return newpow(a);    }else if(b==1){        return newpow(a-1)*4%1000000007;    }else{        return newpow(a)*b%1000000007;    }}</code></pre><p>};<br>因为python没有c++的大数溢出等问题，是可以直接对结果进行直接取余的，写起来较简单。</p><h3 id="python3的解决代码：-1"><a href="#python3的解决代码：-1" class="headerlink" title="python3的解决代码："></a>python3的解决代码：</h3><p>class Solution:<br>    def cuttingRope(self, n: int) -&gt; int:<br>        c=1000000007<br>        if n&lt;=3:<br>            return (n-1)%c<br>        a=n//3<br>        b=n%3<br>        if b==0:<br>            return pow(3,a)%c<br>        if b==1:<br>            return pow(3,a-1)*4%c</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;一：-剪绳子（1）&quot;&gt;&lt;a href=&quot;#一：-剪绳子（1）&quot; class=&quot;headerlink&quot; title=&quot;一： 剪绳子（1）&quot;&gt;&lt;/a&gt;一： 剪绳子（1）&lt;/h2&gt;&lt;p&gt;给你一根长度为 n 的绳子，请把绳子剪成整数长度的 m 段（m、n都是整数，n&amp;gt
+      
+    
+    </summary>
+    
+    
+      <category term="贪心算法" scheme="https://crawlmkt.github.io/categories/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="c++" scheme="https://crawlmkt.github.io/tags/c/"/>
+    
+      <category term="贪心算法" scheme="https://crawlmkt.github.io/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="python" scheme="https://crawlmkt.github.io/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>本博客搭建详细教程</title>
@@ -50,10 +112,10 @@
   
   <entry>
     <title>Hexo server报错Cannot read property &#39;offset&#39; of null解决方法</title>
-    <link href="https://crawlmkt.github.io/posts/6.html"/>
-    <id>https://crawlmkt.github.io/posts/6.html</id>
+    <link href="https://crawlmkt.github.io/posts/7.html"/>
+    <id>https://crawlmkt.github.io/posts/7.html</id>
     <published>2019-03-27T02:02:34.000Z</published>
-    <updated>2020-03-27T02:34:18.146Z</updated>
+    <updated>2020-03-27T08:30:49.397Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Hexo-server报错Cannot-read-property-‘offset’-of-null解决方法"><a href="#Hexo-server报错Cannot-read-property-‘offset’-of-null解决方法" class="headerlink" title="Hexo server报错Cannot read property ‘offset’ of null解决方法"></a>Hexo server报错Cannot read property ‘offset’ of null解决方法</h2><p>新建了一篇article，运行hexo server时候总是报错Cannot read property ‘offset’ of null。</p><p>最后发现是因为手贱把_config.yml中的时区timezone改成了Nanjing。</p><p>解决办法就是把timezone改成Asia/Shanghai就好了。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
     
