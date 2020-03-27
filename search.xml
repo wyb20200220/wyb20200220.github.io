@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>本博客搭建详细教程</title>
+      <link href="/posts/6.html"/>
+      <url>/posts/6.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="本博客详细教程地址："><a href="#本博客详细教程地址：" class="headerlink" title="本博客详细教程地址："></a>本博客详细教程地址：</h2><p>系列教程：</p><ul><li><a href="http://sitoi.cn/posts/6666.html">基于 Hexo GitHub 从零开始搭建个人博客（一）：环境准备篇</a></li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+            <tag> Hexo </tag>
+            
+            <tag> GitHub </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hexo server报错Cannot read property &#39;offset&#39; of null解决方法</title>
+      <link href="/posts/6.html"/>
+      <url>/posts/6.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="Hexo-server报错Cannot-read-property-‘offset’-of-null解决方法"><a href="#Hexo-server报错Cannot-read-property-‘offset’-of-null解决方法" class="headerlink" title="Hexo server报错Cannot read property ‘offset’ of null解决方法"></a>Hexo server报错Cannot read property ‘offset’ of null解决方法</h2><p>新建了一篇article，运行hexo server时候总是报错Cannot read property ‘offset’ of null。</p><p>最后发现是因为手贱把_config.yml中的时区timezone改成了Nanjing。</p><p>解决办法就是把timezone改成Asia/Shanghai就好了。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+            <tag> Hexo </tag>
+            
+            <tag> GitHub </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
