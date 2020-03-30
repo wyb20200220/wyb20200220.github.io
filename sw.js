@@ -24,13 +24,19 @@ var precacheUrls = [];
 
   precacheUrls.push('/');
 
-  precacheUrls.push('/posts/7.html');
+  precacheUrls.push('/posts/12.html');
 
   precacheUrls.push('/posts/9.html');
+
+  precacheUrls.push('/posts/11.html');
 
   precacheUrls.push('/posts/8.html');
 
   precacheUrls.push('/posts/6.html');
+
+  precacheUrls.push('/posts/10.html');
+
+  precacheUrls.push('/posts/7.html');
 
 toolbox.precache(precacheUrls);
 toolbox.options = {"networkTimeoutSeconds":30};
