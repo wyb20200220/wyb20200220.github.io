@@ -4,6 +4,41 @@
   
     
     <entry>
+      <title>排序算法回顾</title>
+      <link href="/posts/14.html"/>
+      <url>/posts/14.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="排序算法回顾"><a href="#排序算法回顾" class="headerlink" title="排序算法回顾"></a>排序算法回顾</h2><p>排序是程序设计里的重要操作也是基本必会的操作。正好在leetcode上刷到了排序题，这里就简单的将一些排序方法进行整理，也是自己的一个简单复习回顾。所有排序代码均采用c++编写。</p><h4 id="例题："><a href="#例题：" class="headerlink" title="例题："></a>例题：</h4><p>给你一个整数数组 nums，请你将该数组升序排列。<br>示例 1：<br>输入：nums = [5,2,3,1]<br>输出：[1,2,3,5]<br>示例 2：<br>输入：nums = [5,1,1,2,0,0]<br>输出：[0,0,1,1,2,5]<br>提示：<br>1 &lt;= nums.length &lt;= 50000<br>-50000 &lt;= nums[i] &lt;= 50000<br>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/sort-an-array">https://leetcode-cn.com/problems/sort-an-array</a></p><h3 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h3><p>直接插入排序是一种最简单的排序方法，它的基本操作是将一个记录插入到已经排好序的有序表中。</p><p>第i趟直接插入排序操作：<br>在有序子序列r[1…i-1]中插入r[i] 变成含有i个记录的有序序列r[1…i]，和顺序查找类似。<br>整个排序过程是进行n-1趟插入，先将第1个记录作为一个有序的子序列，然后从第二个开始逐个插入。直至整个序列变为有序。<br>时间复杂度O(n^2)</p><pre><code>class Solution {public:    vector&lt;int&gt; sortArray(vector&lt;int&gt;&amp; nums) {        int n =  nums.size();        int i,j,t;        for (i = 1; i &lt; n; i++) {            t = nums[i];//待排序元素赋值给临时变量            j = i;            while (j &gt; 0 &amp;&amp; t &lt; nums[j-1]) {//当未达到数组的第一个元素或者待插入元素小于当前元素                nums[j] = nums[j-1];//就将该元素后移                j--;            }            nums[j] = t;//插入位置找到        }        return nums;    }};</code></pre><h3 id="折半插入排序"><a href="#折半插入排序" class="headerlink" title="折半插入排序"></a>折半插入排序</h3><p>单n的值较大时，我们需要对查找进行时间缩短，所以提出折半插入排序。</p><pre><code>class Solution {public:    vector&lt;int&gt; sortArray(vector&lt;int&gt;&amp; nums) {         int left, right, mid;           int length = nums.size();         int tmp;         for (int i = 1; i &lt; length; i++) {        /* 找到数组中第一个无序的数，保存为tmp */        if (nums[i] &lt; nums[i - 1]) {            tmp = nums[i];        }        else {            continue;        }        /* 找到数组中第一个无序的数，保存为tmp */        /* 二分查询开始 */        left = 0;        right = i - 1;        while (left &lt;= right) {            mid = (left + right) / 2;            if (nums[mid] &gt; tmp) {                right = mid - 1;            }            else {                left = mid + 1;            }        }        /* 二分查询结束,此时a[left]&gt;=a[i],记录下left的值 */        /* 将有序数组中比要插入的数大的数右移 */        for (int j = i; j &gt; left; j--) {            nums[j] = nums[j - 1];        }        /* 将有序数组中比要插入的数大的数右移 */        // 将left位置赋值为要插入的数        nums[left] = tmp;    }    return nums;    }};</code></pre><h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>冒泡排序思想是要把相邻的元素两两比较，当一个元素大 于右侧相邻元素时，交换它们的位置；当一个元素小于或等于右侧相 邻元素时，位置不变 。他是交换排序的一种，属于稳定排序。</p><pre><code>class Solution {public:    vector&lt;int&gt; sortArray(vector&lt;int&gt;&amp; nums) {        int n = nums.size();        for (int i = 0; i &lt; n-1; i++) {            for(int j = 0;j &lt; n-i-1; j++) {                int t = 0;                if(nums[j] &gt; nums[j+1]){                    t = nums[j];                    nums[j] = nums[j+1];                    nums[j+1] = t;                }            }        }        return nums;    }};</code></pre><h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><p>同冒泡排序一样，快速排序也属于交换排序 ，通过元素之间的比较和 交换位置来达到排序的目的。<br>不同的是，冒泡排序在每一轮中只把1个元素冒泡到数列的一端，而快 速排序则在每一轮挑选一个基准元素，并让其他比它大的元素移动到 数列一边，比它小的元素移动到数列的另一边，从而把数列拆解成两个部分。<br>在分治法的思想下，原数列在每一轮都被拆分成两部分，每 一部分在下一轮又分别被拆分成两部分，直到不可再分为止。<br>每一轮的比较和交换，需要把数组全部元素都遍历一遍，时间复杂度是 O(n)。这样的遍历一共需要多少轮呢？假如元素个数是n，那么平均情 况下需要logn轮，因此快速排序算法总体的平均时间复杂度是O(nlogn) 。</p><pre><code>class Solution {    int partition(vector&lt;int&gt;&amp; nums, int l, int r) {        int pivot = nums[r];        int i = l - 1;        for (int j = l; j &lt;= r - 1; ++j) {            if (nums[j] &lt;= pivot) {                i = i + 1;                swap(nums[i], nums[j]);            }        }        swap(nums[i + 1], nums[r]);        return i + 1;    }    int randomized_partition(vector&lt;int&gt;&amp; nums, int l, int r) {        int i = rand() % (r - l + 1) + l; // 随机选一个作为我们的主元        swap(nums[r], nums[i]);        return partition(nums, l, r);    }    void randomized_quicksort(vector&lt;int&gt;&amp; nums, int l, int r) {        if (l &lt; r){            int pos = randomized_partition(nums, l, r);            randomized_quicksort(nums, l, pos - 1);            randomized_quicksort(nums, pos + 1, r);        }    }public:    vector&lt;int&gt; sortArray(vector&lt;int&gt;&amp; nums) {        srand((unsigned)time(NULL));        randomized_quicksort(nums, 0, (int)nums.size() - 1);        return nums;    }};</code></pre><h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><p>1.最大堆的堆顶是整个堆中的最大元素。<br>2. 最小堆的堆顶是整个堆中的最小元素。<br>以最大堆为例，如果删除一个最大堆的堆顶（并不是完全删除，而是跟 末尾的节点交换位置），经过自我调整，第2大的元素就会被交换上 来，成为最大堆的新堆顶。<br>堆排序算法的步骤：</p><ol><li>把无序数组构建成二叉堆。需要从小到大排序，则构建成最大堆；需 要从大到小排序，则构建成最小堆。</li><li>循环删除堆顶元素，替换到二叉堆的末尾，调整堆产生新的堆顶。（漫画算法：小灰的算法之旅）</li></ol><pre><code>class Solution {public:    vector&lt;int&gt; sortArray(vector&lt;int&gt;&amp; nums) {        int n = nums.size();        //将数组变为堆        heapify(nums);        // 循环不变量：区间 [0, i] 堆有序        for (int i = n - 1; i &gt;= 1; ) {            // 把堆顶元素（当前最大）交换到数组末尾            swap(nums, 0, i);            // 逐步减少堆有序的部分            i--;            // 下标 0 位置下沉操作，使得区间 [0, i] 堆有序            siftDown(nums, 0, i);        }        return nums;    }    //数组变为堆    void heapify(vector&lt;int&gt;&amp; nums) {        int n = nums.size();        // 只需要从 i = (n - 1) / 2 这个位置开始逐层下移        for (int i = (n - 1) / 2; i &gt;= 0; i--) {            siftDown(nums, i, n - 1);        }    }    //param k    当前下沉元素的下标    //end  [0, end] 是 nums 的有效部分    //    void siftDown(vector&lt;int&gt;&amp; nums, int k, int end) {        while (2 * k + 1 &lt;= end) {            int j = 2 * k + 1;            if (j + 1 &lt;= end &amp;&amp; nums[j + 1] &gt; nums[j]) {                j++;            }            if (nums[j] &gt; nums[k]) {                swap(nums, j, k);            } else {                break;            }            k = j;        }    }    void swap(vector&lt;int&gt;&amp; nums, int index1, int index2) {        int temp = nums[index1];        nums[index1] = nums[index2];        nums[index2] = temp;    }};</code></pre><h3 id="堆排序快速排序异同"><a href="#堆排序快速排序异同" class="headerlink" title="堆排序快速排序异同"></a>堆排序快速排序异同</h3><p>堆排序和快速排序的平均时间复杂度都是O(nlogn) ，并且都是不稳定排序 。至于不同点，快速排序的最坏时间复杂度是O(n^2)) ，而堆排序的最坏时间复 杂度稳定在O(nlogn) 。此外，快速排序递归和非递归方法的平均空间复杂度都是O(logn) ，而堆排序的空间复杂度是O(1) 。</p><h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><p> 划分问题：把序列分成元素个数尽量想等的两半。<br> 递归求解：把两半元素分别排序。<br> 合并问题：把两个有序表合并成一个。<br> 关键是两表合并。可以每次只需要把两个序列的最小元素相比较，删除其中的较小元素并加入合并后的新表。</p><p> 递归调用函数 mergeSort(nums, l, mid) 对 nums 数组里 [l,mid] 部分进行排序。<br>递归调用函数 mergeSort(nums, mid + 1, r) 对 nums 数组里 [mid+1,r] 部分进行排序。<br>此时 nums 数组里[l,mid]和[mid+1,r] 两个区间已经有序我们对两个有序区间线性归并即可使nums数组里[l,r] 的部分有序。<br>线性归并的过程并不难理解，由于两个区间均有序，所以我们维护两个指针 ii 和 jj 表示当前考虑到 [l,mid]里的第i个位置和 [mid+1,r] 的第 j个位置。<br>如果 nums[i] &lt; nums[j] ，那么我们就将nums[i] 放入临时数组 tmp 中并让 i += 1 ，即指针往后移。否则我们就将 nums[j] 放入临时数组 tmp 中并让 j += 1 。如果有一个指针已经移到了区间的末尾，那么就把另一个区间里的数按顺序加入 tmp 数组中即可。</p><p>这样能保证我们每次都是让两个区间中较小的数加入临时数组里，那么整个归并过程结束后[l,r] 即为有序的。</p><pre><code>class Solution {    vector&lt;int&gt; tmp;    void mergeSort(vector&lt;int&gt;&amp; nums, int l, int r) {        if (l &gt;= r) return;        int mid = (l + r) &gt;&gt; 1;        mergeSort(nums, l, mid);        mergeSort(nums, mid + 1, r);        int i = l, j = mid + 1;        int cnt = 0;        while (i &lt;= mid &amp;&amp; j &lt;= r) {            if (nums[i] &lt; nums[j]) {                tmp[cnt++] = nums[i++];            }            else {                tmp[cnt++] = nums[j++];            }        }        while (i &lt;= mid) tmp[cnt++] = nums[i++];        while (j &lt;= r) tmp[cnt++] = nums[j++];        for (int i = 0; i &lt; r - l + 1; ++i) nums[i + l] = tmp[i];    }public:    vector&lt;int&gt; sortArray(vector&lt;int&gt;&amp; nums) {        tmp.resize((int)nums.size(), 0);        mergeSort(nums, 0, (int)nums.size() - 1);        return nums;    }};</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 排序算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 直接插入排序 </tag>
+            
+            <tag> 折半插入排序 </tag>
+            
+            <tag> 冒泡排序 </tag>
+            
+            <tag> 快速排序 </tag>
+            
+            <tag> 归并排序 </tag>
+            
+            <tag> 堆排序 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>合并排序的数组</title>
       <link href="/posts/11.html"/>
       <url>/posts/11.html</url>
@@ -47,9 +82,9 @@
       
         <tags>
             
-            <tag> 二分查找 </tag>
-            
             <tag> c++ </tag>
+            
+            <tag> 二分查找 </tag>
             
         </tags>
       
@@ -132,9 +167,9 @@
       
         <tags>
             
-            <tag> c++ </tag>
-            
             <tag> 贪心算法 </tag>
+            
+            <tag> c++ </tag>
             
             <tag> python </tag>
             
