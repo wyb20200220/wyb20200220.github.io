@@ -737,7 +737,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"Hexo","value":2},{"name":"贪心算法","value":1},{"name":"数组 c++","value":1},{"name":"递归 c++","value":1},{"name":"二分查找 c++","value":1},{"name":"二叉树","value":1},{"name":"排序算法","value":1}],
+                data: [{"name":"Hexo","value":2},{"name":"二叉树","value":1},{"name":"二分查找 c++","value":1},{"name":"贪心算法","value":1},{"name":"递归 c++","value":1},{"name":"排序算法","value":1},{"name":"数组 c++","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -761,7 +761,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["c++","教程","Hexo","GitHub","递归","贪心算法","python","数组","数学","二分查找"]
+                data: ["c++","教程","Hexo","GitHub","递归","二叉树","二分查找","贪心算法","python","数学"]
             }
         ],
         yAxis: [
@@ -973,28 +973,8 @@
                     
                 
                     
-                        <a href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/">
-                            <span class="chip center-align waves-effect waves-light chip-default">贪心算法</span>
-                        </a>
-                    
-                
-                    
-                        <a href="/tags/c/">
-                            <span class="chip center-align waves-effect waves-light chip-default">c++</span>
-                        </a>
-                    
-                
-                    
-                
-                    
-                        <a href="/tags/%E6%95%B0%E7%BB%84/">
-                            <span class="chip center-align waves-effect waves-light chip-default">数组</span>
-                        </a>
-                    
-                
-                    
-                        <a href="/tags/%E6%95%B0%E5%AD%A6/">
-                            <span class="chip center-align waves-effect waves-light chip-default">数学</span>
+                        <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                            <span class="chip center-align waves-effect waves-light chip-default">二叉树</span>
                         </a>
                     
                 
@@ -1005,14 +985,28 @@
                     
                 
                     
+                        <a href="/tags/c/">
+                            <span class="chip center-align waves-effect waves-light chip-default">c++</span>
+                        </a>
+                    
+                
+                    
                         <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/">
                             <span class="chip center-align waves-effect waves-light chip-default">二分查找</span>
                         </a>
                     
                 
                     
-                        <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
-                            <span class="chip center-align waves-effect waves-light chip-default">二叉树</span>
+                        <a href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/">
+                            <span class="chip center-align waves-effect waves-light chip-default">贪心算法</span>
+                        </a>
+                    
+                
+                    
+                
+                    
+                        <a href="/tags/%E6%95%B0%E5%AD%A6/">
+                            <span class="chip center-align waves-effect waves-light chip-default">数学</span>
                         </a>
                     
                 
@@ -1052,6 +1046,12 @@
                         </a>
                     
                 
+                    
+                        <a href="/tags/%E6%95%B0%E7%BB%84/">
+                            <span class="chip center-align waves-effect waves-light chip-default">数组</span>
+                        </a>
+                    
+                
             </div>
         </div>
     
@@ -1073,22 +1073,20 @@
             <br>
             <span id="sitetime">载入运行时间...</span>
             
+            <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+                </script>
             
                 
             
-            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-                </script>
             
                 <span id="busuanzi_container_site_pv">
-                |&nbsp;<i class="fa fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
-                                                                       class="white-color"></span>&nbsp;次
-            </span>
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
             
             
                 <span id="busuanzi_container_site_uv">
-                |&nbsp;<i class="fa fa-user"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
-                                                                         class="white-color"></span>&nbsp;人
-            </span>
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
             
             <br>
             
@@ -1314,7 +1312,7 @@
 
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1585971792348')
+  navigator.serviceWorker.register('/sw.js?t=1585977995864')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

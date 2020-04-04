@@ -130,11 +130,11 @@
       <category term="递归 c++" scheme="https://crawlmkt.github.io/categories/%E9%80%92%E5%BD%92-c/"/>
     
     
+      <category term="递归" scheme="https://crawlmkt.github.io/tags/%E9%80%92%E5%BD%92/"/>
+    
       <category term="c++" scheme="https://crawlmkt.github.io/tags/c/"/>
     
       <category term="数学" scheme="https://crawlmkt.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-      <category term="递归" scheme="https://crawlmkt.github.io/tags/%E9%80%92%E5%BD%92/"/>
     
   </entry>
   
@@ -162,11 +162,11 @@
       <category term="二叉树" scheme="https://crawlmkt.github.io/categories/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
     
-      <category term="c++" scheme="https://crawlmkt.github.io/tags/c/"/>
+      <category term="二叉树" scheme="https://crawlmkt.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     
       <category term="递归" scheme="https://crawlmkt.github.io/tags/%E9%80%92%E5%BD%92/"/>
     
-      <category term="二叉树" scheme="https://crawlmkt.github.io/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+      <category term="c++" scheme="https://crawlmkt.github.io/tags/c/"/>
     
   </entry>
   
@@ -192,9 +192,9 @@
       <category term="贪心算法" scheme="https://crawlmkt.github.io/categories/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="贪心算法" scheme="https://crawlmkt.github.io/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"/>
-    
       <category term="c++" scheme="https://crawlmkt.github.io/tags/c/"/>
+    
+      <category term="贪心算法" scheme="https://crawlmkt.github.io/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"/>
     
       <category term="python" scheme="https://crawlmkt.github.io/tags/python/"/>
     

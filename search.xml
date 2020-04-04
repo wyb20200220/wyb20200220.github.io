@@ -109,11 +109,11 @@
       
         <tags>
             
+            <tag> 递归 </tag>
+            
             <tag> c++ </tag>
             
             <tag> 数学 </tag>
-            
-            <tag> 递归 </tag>
             
         </tags>
       
@@ -138,11 +138,11 @@
       
         <tags>
             
-            <tag> c++ </tag>
+            <tag> 二叉树 </tag>
             
             <tag> 递归 </tag>
             
-            <tag> 二叉树 </tag>
+            <tag> c++ </tag>
             
         </tags>
       
@@ -167,9 +167,9 @@
       
         <tags>
             
-            <tag> 贪心算法 </tag>
-            
             <tag> c++ </tag>
+            
+            <tag> 贪心算法 </tag>
             
             <tag> python </tag>
             
