@@ -682,6 +682,28 @@ public:
     </div>
 
     
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'fe41fa1ac6b49844259f',
+        clientSecret: 'a46ae61203e5f06494451447f9c67932856d4aaa',
+        repo: 'wyb20200220.github.io',
+        owner: 'wyb20200220',
+        admin: '["wyb20200220"]',
+        id: 'posts/11.html',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
 
     
 
@@ -959,6 +981,8 @@ public:
             
                 
             
+            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+                </script>
             
                 <span id="busuanzi_container_site_pv">
                 |&nbsp;<i class="fa fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
@@ -972,11 +996,6 @@ public:
             </span>
             
             <br>
-            
-                <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
-                    document.write(unescape("%3Cspan id='cnzz_stat_icon_1278523400'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1278523400%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));
-                </script>
-                <br>
             
             
                 
@@ -1189,13 +1208,18 @@ public:
 
 <!-- 背景 canvas-nest -->
 
+    <script type="text/javascript" color="0,0,255"
+            pointColor="0,0,255" opacity='0.8'
+            zIndex="-1" count="150"
+            src="/libs/background/canvas-nest.js"></script>
+
 
 
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
 
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1585756817601')
+  navigator.serviceWorker.register('/sw.js?t=1585971792348')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

@@ -737,7 +737,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"Hexo","value":2},{"name":"贪心算法","value":1},{"name":"二分查找 c++","value":1},{"name":"排序算法","value":1},{"name":"二叉树","value":1},{"name":"递归 c++","value":1},{"name":"数组 c++","value":1}],
+                data: [{"name":"Hexo","value":2},{"name":"贪心算法","value":1},{"name":"数组 c++","value":1},{"name":"递归 c++","value":1},{"name":"二分查找 c++","value":1},{"name":"二叉树","value":1},{"name":"排序算法","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -761,7 +761,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["c++","教程","Hexo","GitHub","递归","贪心算法","python","二分查找","直接插入排序","折半插入排序"]
+                data: ["c++","教程","Hexo","GitHub","递归","贪心算法","python","数组","数学","二分查找"]
             }
         ],
         yAxis: [
@@ -987,8 +987,32 @@
                     
                 
                     
+                        <a href="/tags/%E6%95%B0%E7%BB%84/">
+                            <span class="chip center-align waves-effect waves-light chip-default">数组</span>
+                        </a>
+                    
+                
+                    
+                        <a href="/tags/%E6%95%B0%E5%AD%A6/">
+                            <span class="chip center-align waves-effect waves-light chip-default">数学</span>
+                        </a>
+                    
+                
+                    
+                        <a href="/tags/%E9%80%92%E5%BD%92/">
+                            <span class="chip center-align waves-effect waves-light chip-default">递归</span>
+                        </a>
+                    
+                
+                    
                         <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/">
                             <span class="chip center-align waves-effect waves-light chip-default">二分查找</span>
+                        </a>
+                    
+                
+                    
+                        <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                            <span class="chip center-align waves-effect waves-light chip-default">二叉树</span>
                         </a>
                     
                 
@@ -1028,30 +1052,6 @@
                         </a>
                     
                 
-                    
-                        <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
-                            <span class="chip center-align waves-effect waves-light chip-default">二叉树</span>
-                        </a>
-                    
-                
-                    
-                        <a href="/tags/%E9%80%92%E5%BD%92/">
-                            <span class="chip center-align waves-effect waves-light chip-default">递归</span>
-                        </a>
-                    
-                
-                    
-                        <a href="/tags/%E6%95%B0%E5%AD%A6/">
-                            <span class="chip center-align waves-effect waves-light chip-default">数学</span>
-                        </a>
-                    
-                
-                    
-                        <a href="/tags/%E6%95%B0%E7%BB%84/">
-                            <span class="chip center-align waves-effect waves-light chip-default">数组</span>
-                        </a>
-                    
-                
             </div>
         </div>
     
@@ -1076,6 +1076,8 @@
             
                 
             
+            <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+                </script>
             
                 <span id="busuanzi_container_site_pv">
                 |&nbsp;<i class="fa fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
@@ -1089,11 +1091,6 @@
             </span>
             
             <br>
-            
-                <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
-                    document.write(unescape("%3Cspan id='cnzz_stat_icon_1278523400'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1278523400%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));
-                </script>
-                <br>
             
             
                 
@@ -1306,13 +1303,18 @@
 
 <!-- 背景 canvas-nest -->
 
+    <script type="text/javascript" color="0,0,255"
+            pointColor="0,0,255" opacity='0.8'
+            zIndex="-1" count="150"
+            src="/libs/background/canvas-nest.js"></script>
+
 
 
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
 
 
 <script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1585756817601')
+  navigator.serviceWorker.register('/sw.js?t=1585971792348')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
